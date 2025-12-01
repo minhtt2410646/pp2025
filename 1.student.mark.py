@@ -1,3 +1,7 @@
+Students = []
+courses = []
+marks = {}
+
 num_students = int(input("Enter number of students: "))
 for i in range(num_students):
     print("Student", i+1)
