@@ -16,14 +16,10 @@ class Course:
     def show(self):
         print(self.cid, "-", self.name)
 
-
-# ===== MAIN PROGRAM =====
-
 students = []
 courses = []
 marks = {}
 
-# Input students
 num_students = int(input("Enter number of students: "))
 for i in range(num_students):
     print("Student", i + 1)
@@ -32,7 +28,6 @@ for i in range(num_students):
     dob = input("DoB: ")
     students.append(Student(sid, name, dob))
 
-# Input courses
 num_courses = int(input("\nEnter number of courses: "))
 for i in range(num_courses):
     print("Course", i + 1)
@@ -40,7 +35,6 @@ for i in range(num_courses):
     cname = input("Name: ")
     courses.append(Course(cid, cname))
 
-# Input marks
 print("\nSelect course to input marks:")
 for c in courses:
     c.show()
@@ -53,7 +47,6 @@ for s in students:
     score = float(input(f"Mark for {s.name}: "))
     marks[course_id].append((s.sid, score))
 
-# Menu
 while True:
     print("\nMenu:")
     print("1. List students")
