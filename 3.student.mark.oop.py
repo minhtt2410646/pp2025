@@ -1,17 +1,15 @@
 import math
 import numpy as np
 
-
-# -------- Student Class --------
 class Student:
     def __init__(self, sid, name, dob):
         self.sid = sid
         self.name = name
         self.dob = dob
-        self.scores = []   # store marks
+        self.scores = []  
 
     def add_score(self, score):
-        # round down to 1 decimal using math.floor
+    
         score = math.floor(score * 10) / 10
         self.scores.append(score)
 
@@ -27,8 +25,6 @@ class Student:
             "| Avg:", f"{self.average():.2f}"
         )
 
-
-# -------- Course Class --------
 class Course:
     def __init__(self, cid, name):
         self.cid = cid
@@ -38,13 +34,10 @@ class Course:
         print(self.cid, "-", self.name)
 
 
-# ===== MAIN PROGRAM =====
-
 students = []
 courses = []
-marks = {}   # course_id -> list of (student_id, score)
+marks = {}  
 
-# Input students
 num_students = int(input("Enter number of students: "))
 for i in range(num_students):
     print("Student", i + 1)
@@ -53,7 +46,6 @@ for i in range(num_students):
     dob = input("DoB: ")
     students.append(Student(sid, name, dob))
 
-# Input courses
 num_courses = int(input("\nEnter number of courses: "))
 for i in range(num_courses):
     print("Course", i + 1)
@@ -61,7 +53,6 @@ for i in range(num_courses):
     cname = input("Name: ")
     courses.append(Course(cid, cname))
 
-# Input marks
 print("\nSelect course to input marks:")
 for c in courses:
     c.show()
@@ -76,7 +67,6 @@ for s in students:
     marks[course_id].append((s.sid, score))
     s.add_score(score)
 
-# -------- Menu --------
 while True:
     print("\nMenu:")
     print("1. List students")
